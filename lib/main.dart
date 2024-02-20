@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:login_page_wth_firebase/signUpPage.dart';
+import 'package:login_page_wth_firebase/signInPage.dart';
 
 void main() {
   runApp(const MyApp());

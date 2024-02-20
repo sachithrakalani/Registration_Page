@@ -28,7 +28,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   )
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 1),
               Container(
                 margin: const EdgeInsets.only(left: 20,right: 20),
                 width: w,
@@ -49,7 +49,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         color: Colors.grey
                       ),
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 10),
                     Container(
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -80,7 +80,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 20,),
+                    const SizedBox(height: 10,),
                     Container(
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -111,7 +111,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 25,),
+                    const SizedBox(height: 10,),
                     Row(
                       children: [
                         Expanded(child:Container(),),
@@ -126,7 +126,50 @@ class _SignUpPageState extends State<SignUpPage> {
                     )  
                   ]),
               ),
-              
+             const SizedBox(height: 25),
+             Container(
+                width: w * 0.5,
+                height: h * 0.09,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  image: const DecorationImage(
+                    fit: BoxFit.fill,
+                    image: AssetImage(
+                      'assets/images/banner3.jpg'
+                    ),  
+                  )
+                ),
+                child: const Center(
+                  child: Text(
+                    'Sign in',
+                    style:TextStyle(
+                      fontSize: 36,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87
+                    )
+                  ),
+                ),
+              ),
+              SizedBox(height: w * 0.08,),
+              RichText(
+                text: TextSpan(
+                  text:"Don\'t have an account?",
+                  style: TextStyle(
+                    color: Colors.grey[500],
+                    fontSize: 20
+                  ),
+                  children: const [
+                    TextSpan(
+                      text: ' Create',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold
+                      )
+                    )
+                  ]
+                )
+             ) 
             ],
           ),
         ),
