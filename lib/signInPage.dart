@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class SignUpPage extends StatefulWidget {
+class SignInPage extends StatefulWidget {
   @override
-  State<SignUpPage> createState() => _SignUpPageState();
+  State<SignInPage> createState() => _SignInPageState();
 }
 
-class _SignUpPageState extends State<SignUpPage> {
+class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -28,7 +28,9 @@ class _SignUpPageState extends State<SignUpPage> {
                   )
                 ),
               ),
+              
               const SizedBox(height: 1),
+              
               Container(
                 margin: const EdgeInsets.only(left: 20,right: 20),
                 width: w,
@@ -49,7 +51,9 @@ class _SignUpPageState extends State<SignUpPage> {
                         color: Colors.grey
                       ),
                     ),
+                    
                     const SizedBox(height: 10),
+                    
                     Container(
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -126,6 +130,9 @@ class _SignUpPageState extends State<SignUpPage> {
                     )  
                   ]),
               ),
+             
+             
+             
              const SizedBox(height: 25),
              Container(
                 width: w * 0.5,
