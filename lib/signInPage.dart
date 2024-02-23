@@ -1,4 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:login_page_wth_firebase/signUpPage.dart';
+import 'package:get/get.dart';
 
 class SignInPage extends StatefulWidget {
   @override
@@ -173,14 +176,15 @@ class _SignInPageState extends State<SignInPage> {
                     color: Colors.grey[500],
                     fontSize: 20
                   ),
-                  children: const [
+                  children:  [
                     TextSpan(
                       text: ' Create',
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.black,
                         fontSize: 20,
                         fontWeight: FontWeight.bold
-                      )
+                      ),
+                      recognizer: TapGestureRecognizer()..onTap=()=>Get.to(()=>SignUpPage())
                     )
                   ]
                 )

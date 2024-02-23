@@ -1,4 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -46,7 +48,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         )
                       ]),
               ),
-              const SizedBox(height: 60),
+              const SizedBox(height: 40),
               
               Container(
                 margin: const EdgeInsets.only(left: 20,right: 20),
@@ -82,7 +84,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
               ),
               
-              const SizedBox(height: 40),
+              const SizedBox(height: 20),
               
               Container(
                 margin: const EdgeInsets.only(left: 20,right: 20),
@@ -134,7 +136,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 child: const Center(
                   child: Text(
-                    'Sign Up',
+                    'Sign up',
                     style:TextStyle(
                       fontSize: 36,
                       fontWeight: FontWeight.bold,
@@ -143,8 +145,19 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
               ),
+              const SizedBox(height: 10),
+              RichText(
+                text:TextSpan(
+                  recognizer: TapGestureRecognizer()..onTap=()=>Get.back(),
+                  text: 'Have an account?',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.grey[500]
+                  )
+                ) 
+              ),
 
-              SizedBox(height: w * 0.08,),
+              SizedBox(height: w * 0.13,),
 
               RichText(
                 text: TextSpan(
