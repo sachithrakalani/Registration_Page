@@ -38,7 +38,78 @@ class _SignUpPageState extends State<SignUpPage> {
                           ),
                         )
                       ]),
-              )
+              ),
+              const SizedBox(height: 60),
+              
+              Container(
+                margin: const EdgeInsets.only(left: 20,right: 20),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(30),
+                  boxShadow: [
+                    BoxShadow(
+                      blurRadius: 10,
+                      offset: const Offset(1,1),
+                      color: Colors.grey.withOpacity(0.5)
+                    )
+                  ]
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: "Email",
+                    prefixIcon: const Icon(Icons.email, color: Colors.blue),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                      borderSide: const BorderSide(
+                        color: Colors.white,
+                        width: 1.0
+                      )
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                      borderSide: const BorderSide(
+                        color: Colors.white,
+                        width: 1.0)
+                    )
+                  ),
+                ),
+              ),
+              
+              const SizedBox(height: 40),
+              
+              Container(
+                margin: const EdgeInsets.only(left: 20,right: 20),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(30),
+                  boxShadow: [
+                    BoxShadow(
+                      blurRadius: 10,
+                      offset: const Offset(1,1),
+                      color: Colors.grey.withOpacity(0.5)
+                    )
+                  ]
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: "Password",
+                    prefixIcon: const Icon(Icons.password, color: Colors.blue),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                      borderSide: const BorderSide(
+                        color: Colors.white,
+                        width: 1.0
+                      )
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                      borderSide: const BorderSide(
+                        color: Colors.white,
+                        width: 1.0)
+                    )
+                  ),
+                ),
+              ),
             ],
           ),
         ),

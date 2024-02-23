@@ -68,6 +68,8 @@ class _SignInPageState extends State<SignInPage> {
                       ),
                       child: TextField(
                         decoration: InputDecoration(
+                          hintText: "Email",
+                          prefixIcon: const Icon(Icons.email, color: Colors.blue),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
                             borderSide: const BorderSide(
@@ -84,7 +86,9 @@ class _SignInPageState extends State<SignInPage> {
                         ),
                       ),
                     ),
+                    
                     const SizedBox(height: 10,),
+                    
                     Container(
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -99,6 +103,8 @@ class _SignInPageState extends State<SignInPage> {
                       ),
                       child: TextField(
                         decoration: InputDecoration(
+                          hintText: "Password",
+                          prefixIcon: const Icon(Icons.password, color: Colors.blue),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
                             borderSide: const BorderSide(
@@ -116,6 +122,7 @@ class _SignInPageState extends State<SignInPage> {
                       ),
                     ),
                     const SizedBox(height: 10,),
+                    
                     Row(
                       children: [
                         Expanded(child:Container(),),
@@ -130,11 +137,10 @@ class _SignInPageState extends State<SignInPage> {
                     )  
                   ]),
               ),
-             
-             
-             
-             const SizedBox(height: 25),
-             Container(
+              
+              const SizedBox(height: 25),
+              
+              Container(
                 width: w * 0.5,
                 height: h * 0.09,
                 decoration: BoxDecoration(
@@ -157,7 +163,9 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                 ),
               ),
+              
               SizedBox(height: w * 0.08,),
+              
               RichText(
                 text: TextSpan(
                   text:"Don\'t have an account?",
