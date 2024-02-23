@@ -8,6 +8,13 @@ class SignUpPage extends StatefulWidget {
 class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
+
+    List images = [
+      "g.jpg",
+      "t.jpg",
+      "f.jpg",
+    ];
+
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -110,6 +117,67 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
               ),
+
+              const SizedBox(height: 40),
+
+              Container(
+                width: w * 0.5,
+                height: h * 0.09,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  image: const DecorationImage(
+                    fit: BoxFit.fill,
+                    image: AssetImage(
+                      'assets/images/banner3.jpg'
+                    ),  
+                  )
+                ),
+                child: const Center(
+                  child: Text(
+                    'Sign Up',
+                    style:TextStyle(
+                      fontSize: 36,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87
+                    )
+                  ),
+                ),
+              ),
+
+              SizedBox(height: w * 0.08,),
+
+              RichText(
+                text: TextSpan(
+                  text:"Sign up using following methods",
+                  style: TextStyle(
+                    color: Colors.grey[500],
+                    fontSize: 20
+                  ),
+                )
+             ),
+
+            const SizedBox(height: 20),
+
+             Wrap(
+              children: 
+                List<Widget>.generate(
+                  3,
+                   (index){
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: CircleAvatar(
+                        radius: 30,
+                        child: CircleAvatar(
+                          radius: 25,
+                          backgroundImage: AssetImage(
+                            "assets/images/"+images[index]
+                          ),
+                        ),
+                      ),
+                    );
+                   }
+                ),
+             ) 
             ],
           ),
         ),
