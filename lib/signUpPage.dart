@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:login_page_wth_firebase/auth_controller.dart';
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -10,6 +11,8 @@ class SignUpPage extends StatefulWidget {
 class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
+    var emailController = TextEditingController();
+    var passwordController = TextEditingController();
 
     List images = [
       "g.jpg",
@@ -64,6 +67,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   ]
                 ),
                 child: TextField(
+                  controller: emailController,
                   decoration: InputDecoration(
                     hintText: "Email",
                     prefixIcon: const Icon(Icons.email, color: Colors.blue),
@@ -100,6 +104,8 @@ class _SignUpPageState extends State<SignUpPage> {
                   ]
                 ),
                 child: TextField(
+                  controller: passwordController,
+                  obscureText: true,
                   decoration: InputDecoration(
                     hintText: "Password",
                     prefixIcon: const Icon(Icons.password, color: Colors.blue),
@@ -122,26 +128,31 @@ class _SignUpPageState extends State<SignUpPage> {
 
               const SizedBox(height: 40),
 
-              Container(
-                width: w * 0.5,
-                height: h * 0.09,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  image: const DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage(
-                      'assets/images/banner3.jpg'
-                    ),  
-                  )
-                ),
-                child: const Center(
-                  child: Text(
-                    'Sign up',
-                    style:TextStyle(
-                      fontSize: 36,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87
+              GestureDetector(
+                onTap: (){
+                  AuthController.instance.register(emailController.text.trim(), passwordController.text.trim());
+                },
+                child: Container(
+                  width: w * 0.5,
+                  height: h * 0.09,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    image: const DecorationImage(
+                      fit: BoxFit.fill,
+                      image: AssetImage(
+                        'assets/images/banner3.jpg'
+                      ),  
                     )
+                  ),
+                  child: const Center(
+                    child: Text(
+                      'Sign up',
+                      style:TextStyle(
+                        fontSize: 36,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black87
+                      )
+                    ),
                   ),
                 ),
               ),
