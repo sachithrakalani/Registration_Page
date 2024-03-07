@@ -22,6 +22,9 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
+//apply plugin: 'com.google.gms.google-services'
+apply plugin: "com.google.gms.google-services"
+
 android {
     namespace "com.example.login_page_wth_firebase"
     compileSdkVersion flutter.compileSdkVersion
@@ -49,6 +52,7 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        //MultiDexEnable true
     }
 
     buildTypes {
@@ -64,4 +68,6 @@ flutter {
     source '../..'
 }
 
-dependencies {}
+dependencies {
+    //implementation 'com.android.support:multidex:1.0.3'
+}
