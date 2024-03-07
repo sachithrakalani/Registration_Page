@@ -1,4 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:login_page_wth_firebase/signUpPage.dart';
+import 'package:get/get.dart';
 
 class SignInPage extends StatefulWidget {
   @override
@@ -28,7 +31,9 @@ class _SignInPageState extends State<SignInPage> {
                   )
                 ),
               ),
+              
               const SizedBox(height: 1),
+              
               Container(
                 margin: const EdgeInsets.only(left: 20,right: 20),
                 width: w,
@@ -49,7 +54,9 @@ class _SignInPageState extends State<SignInPage> {
                         color: Colors.grey
                       ),
                     ),
+                    
                     const SizedBox(height: 10),
+                    
                     Container(
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -64,6 +71,43 @@ class _SignInPageState extends State<SignInPage> {
                       ),
                       child: TextField(
                         decoration: InputDecoration(
+                          hintText: "Email",
+                          prefixIcon: const Icon(Icons.email, color: Colors.blue),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30),
+                            borderSide: const BorderSide(
+                              color: Colors.white,
+                               width: 1.0
+                            )
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30),
+                            borderSide: const BorderSide(
+                              color: Colors.white,
+                              width: 1.0)
+                          )
+                        ),
+                      ),
+                    ),
+                    
+                    const SizedBox(height: 10,),
+                    
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(30),
+                        boxShadow: [
+                          BoxShadow(
+                            blurRadius: 10,
+                            offset: const Offset(1,1),
+                            color: Colors.grey.withOpacity(0.5)
+                          )
+                        ]
+                      ),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          hintText: "Password",
+                          prefixIcon: const Icon(Icons.password, color: Colors.blue),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
                             borderSide: const BorderSide(
@@ -81,37 +125,7 @@ class _SignInPageState extends State<SignInPage> {
                       ),
                     ),
                     const SizedBox(height: 10,),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(30),
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 10,
-                            offset: const Offset(1,1),
-                            color: Colors.grey.withOpacity(0.5)
-                          )
-                        ]
-                      ),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30),
-                            borderSide: const BorderSide(
-                              color: Colors.white,
-                               width: 1.0
-                            )
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30),
-                            borderSide: const BorderSide(
-                              color: Colors.white,
-                              width: 1.0)
-                          )
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 10,),
+                    
                     Row(
                       children: [
                         Expanded(child:Container(),),
@@ -126,8 +140,10 @@ class _SignInPageState extends State<SignInPage> {
                     )  
                   ]),
               ),
-             const SizedBox(height: 25),
-             Container(
+              
+              const SizedBox(height: 25),
+              
+              Container(
                 width: w * 0.5,
                 height: h * 0.09,
                 decoration: BoxDecoration(
@@ -150,7 +166,9 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                 ),
               ),
+              
               SizedBox(height: w * 0.08,),
+              
               RichText(
                 text: TextSpan(
                   text:"Don\'t have an account?",
@@ -158,14 +176,15 @@ class _SignInPageState extends State<SignInPage> {
                     color: Colors.grey[500],
                     fontSize: 20
                   ),
-                  children: const [
+                  children:  [
                     TextSpan(
                       text: ' Create',
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.black,
                         fontSize: 20,
                         fontWeight: FontWeight.bold
-                      )
+                      ),
+                      recognizer: TapGestureRecognizer()..onTap=()=>Get.to(()=>SignUpPage())
                     )
                   ]
                 )
